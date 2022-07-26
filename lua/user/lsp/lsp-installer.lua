@@ -18,10 +18,11 @@ local servers = {
   "yamlls",
   "bashls",
   "clangd",
+  "hls",
 }
 
 local settings = {
-  ensure_installed = servers,
+  -- ensure_installed = servers,
   -- automatic_installation = false,
   ui = {
     icons = {
