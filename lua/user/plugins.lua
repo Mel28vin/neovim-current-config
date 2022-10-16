@@ -43,7 +43,7 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- Have packer manage itself
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
-	use("numToStr/Comment.nvim")
+	use{"numToStr/Comment.nvim", commit="006724e38c244c3128b2840ea40bd61dd6c419f0"}
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
 	use("akinsho/bufferline.nvim")
@@ -59,6 +59,8 @@ return packer.startup(function(use)
 	-- Colorschemes
 	use("lunarvim/colorschemes") -- A bunch of colorschemes you can try out
 	use("rafi/awesome-vim-colorschemes")
+	use("folke/tokyonight.nvim")
+  use { "catppuccin/nvim", as = "catppuccin" }
 
 	-- snippets
 	use("L3MON4D3/LuaSnip") --snippet engine
