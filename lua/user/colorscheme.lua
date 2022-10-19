@@ -1,6 +1,6 @@
 local colorscheme = "onedark"
--- vim.g.catppuccin_flavour = "frappe" -- latte, frappe, macchiato, mocha
-
+-- vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+-- --
 -- require("catppuccin").setup()
 -- local colorscheme = "catppuccin"
 
