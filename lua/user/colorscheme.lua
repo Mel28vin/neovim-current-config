@@ -1,8 +1,11 @@
-local colorscheme = "onedark"
--- vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
--- --
--- require("catppuccin").setup()
--- local colorscheme = "catppuccin"
+-- local colorscheme = "onedark"
+vim.g.catppuccin_flavour = "frappe" -- latte, frappe, macchiato, mocha
+--
+require("catppuccin").setup({
+  term_colors = true,
+  transparent_background = true,
+})
+local colorscheme = "catppuccin"
 
 -- vim.cmd [[colorscheme catppuccin]]
 
@@ -11,4 +14,4 @@ if not status_ok then
   vim.notify("colorscheme " .. colorscheme .. " not found!")
   return
 end
-vim.cmd [[hi Normal guibg=None ctermbg=None]]
+-- vim.cmd [[hi Normal guibg=None ctermbg=None]]
