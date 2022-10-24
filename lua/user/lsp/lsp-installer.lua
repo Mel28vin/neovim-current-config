@@ -19,6 +19,7 @@ local servers = {
   "bashls",
   "clangd",
   "tailwindcss",
+  "prismals"
   -- "hls",
 }
 

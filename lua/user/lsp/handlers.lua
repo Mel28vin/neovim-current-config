@@ -18,6 +18,7 @@ M.setup = function()
 
   local config = {
     -- disable virtual text
+    enabled = true,
     virtual_text = false,
     -- show signs
     signs = {
@@ -33,6 +34,12 @@ M.setup = function()
       source = "always",
       header = "",
       prefix = "",
+    },
+    underlines = {
+      errors = { "underline" },
+      hints = { "underline" },
+      warnings = { "underline" },
+      information = { "underline" },
     },
   }
 

@@ -14,7 +14,7 @@ null_ls.setup {
   debug = false,
   sources = {
     formatting.prettier.with {
-      extra_filetypes = { "toml", "solidity" },
+      extra_filetypes = { "toml", "solidity", "astro" },
       extra_args = { "--no-semi" },
     },
     formatting.black.with { extra_args = { "--fast" } },

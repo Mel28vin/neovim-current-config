@@ -1,9 +1,17 @@
 -- local colorscheme = "onedark"
-vim.g.catppuccin_flavour = "frappe" -- latte, frappe, macchiato, mocha
+vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
 --
 require("catppuccin").setup({
   term_colors = true,
   transparent_background = true,
+  integrations = {
+    cmp = true,
+    gitsigns = true,
+    nvimtree = true,
+    telescope = true,
+    treesitter = true,
+    which_key = true,
+  },
 })
 local colorscheme = "catppuccin"
 
