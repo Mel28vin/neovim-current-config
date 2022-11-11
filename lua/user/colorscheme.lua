@@ -11,6 +11,7 @@ require("catppuccin").setup({
     telescope = true,
     treesitter = true,
     which_key = true,
+    -- lsp_saga = true,
   },
 })
 local colorscheme = "catppuccin"

@@ -125,7 +125,7 @@ local mappings = {
   --   "Find files",
   -- },
   -- ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-  ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+  ["p"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
   -- ["R"] = { '<cmd>lua require("renamer").rename()<cr>', "Rename" },
   ["z"] = { "<cmd>ZenMode<cr>", "Zen" },
   ["gy"] = "Link",
@@ -139,7 +139,7 @@ local mappings = {
     m = { "<cmd>BrowseMdnSearch<cr>", "Mdn" },
   },
 
-  p = {
+  P = {
     name = "Packer",
     c = { "<cmd>PackerCompile<cr>", "Compile" },
     i = { "<cmd>PackerInstall<cr>", "Install" },
@@ -148,33 +148,33 @@ local mappings = {
     u = { "<cmd>PackerUpdate<cr>", "Update" },
   },
 
-  o = {
-    name = "Options",
-    w = { '<cmd>lua require("user.functions").toggle_option("wrap")<cr>', "Wrap" },
-    r = { '<cmd>lua require("user.functions").toggle_option("relativenumber")<cr>', "Relative" },
-    l = { '<cmd>lua require("user.functions").toggle_option("cursorline")<cr>', "Cursorline" },
-    s = { '<cmd>lua require("user.functions").toggle_option("spell")<cr>', "Spell" },
-    t = { '<cmd>lua require("user.functions").toggle_tabline()<cr>', "Tabline" },
-  },
+  -- o = {
+  --   name = "Options",
+  --   w = { '<cmd>lua require("user.functions").toggle_option("wrap")<cr>', "Wrap" },
+  --   r = { '<cmd>lua require("user.functions").toggle_option("relativenumber")<cr>', "Relative" },
+  --   l = { '<cmd>lua require("user.functions").toggle_option("cursorline")<cr>', "Cursorline" },
+  --   s = { '<cmd>lua require("user.functions").toggle_option("spell")<cr>', "Spell" },
+  --   t = { '<cmd>lua require("user.functions").toggle_tabline()<cr>', "Tabline" },
+  -- },
 
   -- s = {
   --   name = "Split",
   --   s = { "<cmd>split<cr>", "HSplit" },
   --   v = { "<cmd>vsplit<cr>", "VSplit" },
   -- },
-
-  s = {
-    name = "Session",
-    s = { "<silent><cmd>SaveSession<cr>", "Save" },
-    r = { "<silent><cmd>RestoreSession<cr>", "Restore" },
-    x = { "<silent><cmd>DeleteSession<cr>", "Delete" },
-    f = { "<silent><cmd>Autosession search<cr>", "Find" },
-    d = { "<silent><cmd>Autosession delete<cr>", "Find Delete" },
-    -- a = { ":SaveSession<cr>", "test" },
-    -- a = { ":RestoreSession<cr>", "test" },
-    -- a = { ":RestoreSessionFromFile<cr>", "test" },
-    -- a = { ":DeleteSession<cr>", "test" },
-  },
+  --
+  -- s = {
+  --   name = "Session",
+  --   s = { "<silent><cmd>SaveSession<cr>", "Save" },
+  --   r = { "<silent><cmd>RestoreSession<cr>", "Restore" },
+  --   x = { "<silent><cmd>DeleteSession<cr>", "Delete" },
+  --   f = { "<silent><cmd>Autosession search<cr>", "Find" },
+  --   d = { "<silent><cmd>Autosession delete<cr>", "Find Delete" },
+  --   -- a = { ":SaveSession<cr>", "test" },
+  --   -- a = { ":RestoreSession<cr>", "test" },
+  --   -- a = { ":RestoreSessionFromFile<cr>", "test" },
+  --   -- a = { ":DeleteSession<cr>", "test" },
+  -- },
 
   r = {
     name = "Replace",
