@@ -57,6 +57,7 @@ require("lazy").setup({
  {
     "glepnir/lspsaga.nvim",
     branch = "main",
+    commit = "ba8ad94b42a9a807c2ab0b4545c098f0b513f3f4"
   },
 
   -- CMP
