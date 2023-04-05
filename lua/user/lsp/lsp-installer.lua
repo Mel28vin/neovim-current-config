@@ -1,5 +1,10 @@
-local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
+local status_ok, mason = pcall(require, "mason")
 if not status_ok then
+  return
+end
+
+local status_ok_1, mason_lspconfig = pcall(require, "mason-lspconfig")
+if not status_ok_1 then
   return
 end
 
@@ -11,7 +16,7 @@ local servers = {
   -- "jdtls",
   "jsonls",
   -- "solc",
-  "sumneko_lua",
+  "lua_ls",
   -- "tflint",
   "tsserver",
   "pyright",
@@ -27,34 +32,23 @@ local servers = {
 }
 
 local settings = {
-  -- ensure_installed = servers,
-  -- automatic_installation = false,
   ui = {
+    border = "rounded",
     icons = {
-      -- server_installed = "◍",
-      -- server_pending = "◍",
-      -- server_uninstalled = "◍",
-      -- server_installed = "✓",
-      -- server_pending = "➜",
-      -- server_uninstalled = "✗",
-    },
-    keymaps = {
-      toggle_server_expand = "<CR>",
-      install_server = "i",
-      update_server = "u",
-      check_server_version = "c",
-      update_all_servers = "U",
-      check_outdated_servers = "C",
-      uninstall_server = "X",
+      package_installed = "◍",
+      package_pending = "◍",
+      package_uninstalled = "◍",
     },
   },
-
   log_level = vim.log.levels.INFO,
-  -- max_concurrent_installers = 4,
-  -- install_root_dir = path.concat { vim.fn.stdpath "data", "lsp_servers" },
+  max_concurrent_installers = 4,
 }
 
-lsp_installer.setup(settings)
+mason.setup(settings)
+mason_lspconfig.setup {
+  ensure_installed = servers,
+  automatic_installation = true,
+}
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
@@ -69,9 +63,16 @@ for _, server in pairs(servers) do
     capabilities = require("user.lsp.handlers").capabilities,
   }
 
-  if server == "sumneko_lua" then
-    local sumneko_opts = require "user.lsp.settings.sumneko_lua"
-    opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
+  server = vim.split(server, "@")[1]
+
+  if server == "lua_ls" then
+    local lua_opts = require "user.lsp.settings.sumneko_lua"
+    opts = vim.tbl_deep_extend("force", lua_opts, opts)
+  end
+
+  if server == "tsserver" then
+    local tsserver_opts = require "user.lsp.settings.tsserver"
+    opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
   end
 
   if server == "pyright" then
@@ -79,18 +80,16 @@ for _, server in pairs(servers) do
     opts = vim.tbl_deep_extend("force", pyright_opts, opts)
   end
 
-  if server == "tsserver" then
-    local emmet_ls_opts = require "user.lsp.settings.tsserver"
-    opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
-  end
 
   if server == "emmet_ls" then
     local emmet_ls_opts = require "user.lsp.settings.emmet_ls"
     opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
   end
 
-  lspconfig[server].setup(opts)
-end
+  if server == "jdtls" then
+    goto continue
+  end
 
--- TODO: add something to installer later
--- require("lspconfig").motoko.setup {}
+  lspconfig[server].setup(opts)
+  ::continue::
+end

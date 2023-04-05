@@ -20,7 +20,6 @@ vim.g.maplocalleader = " "
 -- Install your plugins here
 require("lazy").setup({
   -- My plugins here
-  -- use("wbthomason/kpacker.nvim") -- Have packer manage itself
   "nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
   "windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
   { "numToStr/Comment.nvim", commit = "006724e38c244c3128b2840ea40bd61dd6c419f0" },
@@ -50,6 +49,8 @@ require("lazy").setup({
   -- LSP
   "neovim/nvim-lspconfig", -- enable LSP
   "williamboman/nvim-lsp-installer", -- simple to use language server installer
+  "williamboman/mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
   "jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
   "RRethy/vim-illuminate",
   "folke/which-key.nvim",
