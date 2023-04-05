@@ -58,9 +58,9 @@ return packer.startup(function(use)
   use("norcalli/nvim-colorizer.lua")
 
   -- Colorschemes
-  use("lunarvim/colorschemes") -- A bunch of colorschemes you can try out
+  -- use("lunarvim/colorschemes") -- A bunch of colorschemes you can try out
   use("rafi/awesome-vim-colorschemes")
-  use("folke/tokyonight.nvim")
+  --  use("folke/tokyonight.nvim")
   use { "catppuccin/nvim", as = "catppuccin" }
 
   -- snippets
@@ -113,6 +113,8 @@ return packer.startup(function(use)
   use("rcarriga/nvim-dap-ui")
   use("Pocco81/DAPInstall.nvim")
 
+  -- use("ThePrimeagen/vim-be-good")
+  use("karb94/neoscroll.nvim")
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

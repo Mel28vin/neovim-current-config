@@ -21,7 +21,8 @@ local servers = {
   "tailwindcss",
   "prismals",
   "astro",
-  "eslint"
+  "eslint",
+  "gopls"
   -- "hls",
 }
 
