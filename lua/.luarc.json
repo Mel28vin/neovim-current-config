@@ -1,0 +1,6 @@
+{
+    "diagnostics.globals": [
+        "vim",
+        "JAVA_DAP_ACTIVE"
+    ]
+}

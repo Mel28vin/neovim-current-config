@@ -48,7 +48,7 @@ require("lazy").setup({
 
   -- LSP
   "neovim/nvim-lspconfig", -- enable LSP
-  "williamboman/nvim-lsp-installer", -- simple to use language server installer
+  -- "williamboman/nvim-lsp-installer", -- simple to use language server installer
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
