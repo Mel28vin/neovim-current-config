@@ -10,9 +10,9 @@ end
 
 local servers = {
   "cssls",
-  "cssmodules_ls",
+  -- "cssmodules_ls",
   "emmet_ls",
-  "html",
+  -- "html",
   -- "jdtls",
   "jsonls",
   -- "solc",
@@ -27,7 +27,8 @@ local servers = {
   "prismals",
   "astro",
   "eslint",
-  "gopls"
+  -- "gopls",
+  "rust_analyzer"
   -- "hls",
 }
 

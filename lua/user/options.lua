@@ -20,7 +20,7 @@ local options = {
   swapfile = false,                        -- creates a swapfile
   termguicolors = true,                    -- set term gui colors (most terminals support this)
   timeoutlen = 100,                        -- time to wait for a mapped sequence to complete (in milliseconds)
-  undofile = true,                         -- enable persistent undo
+  undofile = false,                         -- enable persistent undo
   updatetime = 300,                        -- faster completion (4000ms default)
   writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
   expandtab = true,                        -- convert tabs to spaces
@@ -37,7 +37,8 @@ local options = {
   wrap = false,                            -- display lines as one long line
   scrolloff = 12,                           -- is one of my fav
   sidescrolloff = 8,
-  guicursor = ""
+  guicursor = "",
+  undodir = "/home/kryonickat/.cache/nvim/undodir"
 }
 
 vim.g.loaded_netrw = 1
@@ -45,6 +46,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.fillchars.eob=" "
 
 vim.opt.shortmess:append "c"
+-- vim.g.rustfmt_autosave = 1
 
 for k, v in pairs(options) do
   vim.opt[k] = v

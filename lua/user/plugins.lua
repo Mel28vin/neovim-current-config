@@ -23,10 +23,10 @@ require("lazy").setup({
   "nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
   "windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
   { "numToStr/Comment.nvim", commit = "006724e38c244c3128b2840ea40bd61dd6c419f0" },
-  "kyazdani42/nvim-web-devicons",
+  "nvim-tree/nvim-web-devicons",
   "kyazdani42/nvim-tree.lua",
   "akinsho/bufferline.nvim",
-  "moll/vim-bbye",
+  {"moll/vim-bbye", cmd = { "Bdelete", "Bwipeout"},},
   "nvim-lualine/lualine.nvim",
   "akinsho/toggleterm.nvim",
   "ahmedkhalf/project.nvim",
@@ -34,14 +34,26 @@ require("lazy").setup({
   "lukas-reineke/indent-blankline.nvim",
   "goolord/alpha-nvim",
   "ThePrimeagen/harpoon",
-  "norcalli/nvim-colorizer.lua",
-
+  -- { "norcalli/nvim-colorizer.lua", ft = { "css" } },
+  {
+    "mbbill/undotree",
+    cmd = { "UndotreeShow", "UndotreeToggle", "UndotreeHide", "UndotreeFocus" },
+  },
   -- Colorschemes
   -- use("lunarvim/colorschemes") -- A bunch of colorschemes you can try out
   "rafi/awesome-vim-colorschemes",
-  --  use("folke/tokyonight.nvim")
+{ "navarasu/onedark.nvim", priority = 1000 , lazy = false, enabled = true},
+  "folke/tokyonight.nvim",
   { "catppuccin/nvim", name = "catppuccin" },
-
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    cmd = {"Neotree"},
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    }
+  },
   -- snippets
   "L3MON4D3/LuaSnip", --snippet engine
   "rafamadriz/friendly-snippets", -- a bunch of snippets to use
@@ -57,7 +69,7 @@ require("lazy").setup({
  {
     "glepnir/lspsaga.nvim",
     branch = "main",
-    commit = "ba8ad94b42a9a807c2ab0b4545c098f0b513f3f4"
+    -- commit = "ba8ad94b42a9a807c2ab0b4545c098f0b513f3f4"
   },
 
   -- CMP
@@ -102,4 +114,25 @@ require("lazy").setup({
   -- if PACKER_BOOTSTRAP then
   --   require("packer").sync()
   -- end
-})
+},{
+ defaults = { lazy = true },
+ install = { colorscheme = { "catppuccin" } },
+ -- checker = { enabled = true },
+ change_detection = {
+  notify = false,
+ },
+ performance = {
+  rtp = {
+   disabled_plugins = {
+    "gzip",
+    "matchit",
+    "matchparen",
+    "netrwPlugin",
+    "tarPlugin",
+    "tohtml",
+    "tutor",
+    "zipPlugin",
+   },
+  },
+ },
+} )
