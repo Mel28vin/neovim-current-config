@@ -42,18 +42,7 @@ require("lazy").setup({
   -- Colorschemes
   -- use("lunarvim/colorschemes") -- A bunch of colorschemes you can try out
   "rafi/awesome-vim-colorschemes",
-{ "navarasu/onedark.nvim", priority = 1000 , lazy = false, enabled = true},
-  "folke/tokyonight.nvim",
   { "catppuccin/nvim", name = "catppuccin" },
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    cmd = {"Neotree"},
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-    }
-  },
   -- snippets
   "L3MON4D3/LuaSnip", --snippet engine
   "rafamadriz/friendly-snippets", -- a bunch of snippets to use
@@ -106,7 +95,19 @@ require("lazy").setup({
   -- "mfussenegger/nvim-dap")
   -- "rcarriga/nvim-dap-ui")
   -- "Pocco81/DAPInstall.nvim")
-
+  {
+    "mfussenegger/nvim-dap",
+    event = "BufReadPre",
+    dependencies = {
+      "theHamsta/nvim-dap-virtual-text",
+      "rcarriga/nvim-dap-ui",
+      "mfussenegger/nvim-dap-python",
+      "nvim-telescope/telescope-dap.nvim",
+    },
+    config = function()
+      require("user.dap").setup()
+    end,
+},
   -- use("ThePrimeagen/vim-be-good")
   "karb94/neoscroll.nvim",
   -- Automatically set up your configuration after cloning packer.nvim

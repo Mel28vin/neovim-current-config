@@ -44,17 +44,17 @@ local workspace_dir = WORKSPACE_PATH .. project_name
 
 -- TODO: Testing
 
-JAVA_DAP_ACTIVE = false
+JAVA_DAP_ACTIVE = true
 
 local bundles = {}
 
 if JAVA_DAP_ACTIVE then
-  vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/.config/nvim/vscode-java-test/server/*.jar"), "\n"))
+  vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/.local/share/nvim/vscode-java-test/server/*.jar"), "\n"))
   vim.list_extend(
     bundles,
     vim.split(
       vim.fn.glob(
-        home .. "/.config/nvim/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
+        home .. "/.local/share/nvim/java-debug/java-debug-0.46.0/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
       ),
       "\n"
     )
@@ -140,6 +140,11 @@ local config = {
       },
       references = {
         includeDecompiledSources = true,
+      },
+      inlayHints = {
+        parameterNames = {
+          enabled = "all", -- literals, all, none
+        },
       },
       format = {
         enabled = false,
