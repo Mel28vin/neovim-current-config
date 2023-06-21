@@ -36,8 +36,8 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 --Bufferline Navigation
-keymap('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', opts)
-keymap('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', opts)
+keymap("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", opts)
+keymap("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", opts)
 
 -- Insert --
 -- Press jk fast to enter
