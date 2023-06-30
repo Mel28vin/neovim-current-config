@@ -45,14 +45,7 @@ require("lazy").setup({
 	-- use("lunarvim/colorschemes") -- A bunch of colorschemes you can try out
 	-- "rafi/awesome-vim-colorschemes",
 	{ "catppuccin/nvim", name = "catppuccin" },
-	-- snippets
-	-- {
-	--   "L3MON4D3/LuaSnip", --snippet engine
-	--   dependencies = {
-	--       "rafamadriz/friendly-snippets", -- a bunch of snippets to use
-	--       "saadparwaiz1/cmp_luasnip", -- snippet completions
-	--   },
-	-- },
+
 	-- LSP
 	{
 		"neovim/nvim-lspconfig",
@@ -109,11 +102,11 @@ require("lazy").setup({
 	"JoosepAlviste/nvim-ts-context-commentstring",
 	"windwp/nvim-ts-autotag",
 
-	{
-		"zbirenbaum/copilot.lua",
-		cmd = { "Copilot" },
-		event = { "InsertEnter" },
-	},
+	-- {
+	-- 	"zbirenbaum/copilot.lua",
+	-- 	cmd = { "Copilot" },
+	-- 	event = { "InsertEnter" },
+	-- },
 
 	-- Git
 	{
@@ -121,10 +114,6 @@ require("lazy").setup({
 		event = { "BufReadPre", "BufNewFile" },
 	},
 
-	-- DAP
-	-- "mfussenegger/nvim-dap")
-	-- "rcarriga/nvim-dap-ui")
-	-- "Pocco81/DAPInstall.nvim")
 	{
 		"mfussenegger/nvim-dap",
 		event = "BufReadPre",

@@ -28,3 +28,4 @@ require("user.ts-autotag")
 -- require("user.nvim-colorizer")
 require("user.dap")
 require("user.copilot")
+-- add a file named copilot
