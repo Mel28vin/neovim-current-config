@@ -27,7 +27,7 @@ local servers = {
 	"prismals",
 	"astro",
 	"eslint",
-	-- "gopls",
+	"gopls",
 	"rust_analyzer",
 	-- "hls",
 }
@@ -86,5 +86,9 @@ for _, server in pairs(servers) do
 		opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
 	end
 
+	if server == "gopls" then
+		local go_opts = require("user.lsp.settings.gopls")
+		opts = vim.tbl_deep_extend("force", go_opts, opts)
+	end
 	lspconfig[server].setup(opts)
 end

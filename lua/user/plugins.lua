@@ -127,6 +127,18 @@ require("lazy").setup({
 			require("user.dap").setup()
 		end,
 	},
+
+	{
+		"olexsmir/gopher.nvim",
+		ft = "go",
+		config = function(_, opts)
+			require("gopher").setup(opts)
+		end,
+		build = function()
+			vim.cmd([[silent! GoInstallDeps]])
+		end,
+	},
+
 	"karb94/neoscroll.nvim",
 }, {
 	defaults = { lazy = true },
