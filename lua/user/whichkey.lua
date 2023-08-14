@@ -104,8 +104,6 @@ local m_mappings = {
 
 local mappings = {
 	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-	-- b = { "<cmd>lua require('user.bfs').open()<cr>", "Buffers" },
-	-- b = { "<cmd>JABSOpen<cr>", "Buffers" },
 	h = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
 	s = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" },
 	["b"] = {
@@ -114,32 +112,11 @@ local mappings = {
 	},
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["w"] = { "<cmd>w<CR>", "Write" },
-	-- ["h"] = { "<cmd>nohlsearch<CR>", "No HL" },
-	-- ["q"] = { '<cmd>lua require("user.functions").smart_quit()<CR>', "Quit" },
 	["/"] = { '<cmd>lua require("Comment.api").toggle_current_linewise()<CR>', "Comment" },
 	["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-	-- ["c"] = { "<cmd>bd<CR>", "Close Buffer" },
-
-	-- :lua require'lir.float'.toggle()
-	-- ["f"] = {
-	--   "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-	--   "Find files",
-	-- },
-	-- ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 	["p"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-	-- ["R"] = { '<cmd>lua require("renamer").rename()<cr>', "Rename" },
-	-- ["z"] = { "<cmd>ZenMode<cr>", "Zen" },
 	["gy"] = "Link",
-	["u"] = { "<cmd>UndotreeShow<cr>", "UndoTree" },
-
-	-- o = {
-	--   name = "Options",
-	--   w = { '<cmd>lua require("user.functions").toggle_option("wrap")<cr>', "Wrap" },
-	--   r = { '<cmd>lua require("user.functions").toggle_option("relativenumber")<cr>', "Relative" },
-	--   l = { '<cmd>lua require("user.functions").toggle_option("cursorline")<cr>', "Cursorline" },
-	--   s = { '<cmd>lua require("user.functions").toggle_option("spell")<cr>', "Spell" },
-	--   t = { '<cmd>lua require("user.functions").toggle_tabline()<cr>', "Tabline" },
-	-- },
+	["u"] = { "<cmd>UndotreeToggle<cr>", "UndoTree" },
 
 	-- s = {
 	--   name = "Split",
@@ -159,13 +136,6 @@ local mappings = {
 	--   -- a = { ":RestoreSessionFromFile<cr>", "test" },
 	--   -- a = { ":DeleteSession<cr>", "test" },
 	-- },
-
-	r = {
-		name = "Replace",
-		r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
-		w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
-		f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
-	},
 
 	d = {
 		name = "Debug",
@@ -240,15 +210,15 @@ local mappings = {
 	l = {
 		name = "LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-		d = { "<cmd>TroubleToggle<cr>", "Diagnostics" },
+		-- d = { "<cmd>TroubleToggle<cr>", "Diagnostics" },
 		w = {
-			"<cmd>Telescope lsp_workspace_diagnostics<cr>",
+			"<cmd>Telescope diagnostics<cr>",
 			"Workspace Diagnostics",
 		},
 		f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
-		F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
+		-- F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
 		i = { "<cmd>LspInfo<cr>", "Info" },
-		h = { "<cmd>IlluminationToggle<cr>", "Toggle Doc HL" },
+		-- h = { "<cmd>IlluminateToggle<cr>", "Toggle Doc HL" },
 		I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
 		j = {
 			"<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>",
@@ -259,10 +229,10 @@ local mappings = {
 			"Prev Diagnostic",
 		},
 		l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-		o = { "<cmd>SymbolsOutline<cr>", "Outline" },
-		q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
+		-- o = { "<cmd>SymbolsOutline<cr>", "Outline" },
+		-- q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
 		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-		R = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
+		R = { "<cmd>lua vim.lsp.buf.references()<cr>", "References" },
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		S = {
 			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
@@ -271,16 +241,6 @@ local mappings = {
 		-- t = { '<cmd>lua require("user.functions").toggle_diagnostics()<cr>', "Toggle Diagnostics" },
 		-- u = { "<cmd>LuaSnipUnlinkCurrent<cr>", "Unlink Snippet" },
 	},
-
-	-- s = {
-	--   name = "Surround",
-	--   ["."] = { "<cmd>lua require('surround').repeat_last()<cr>", "Repeat" },
-	--   a = { "<cmd>lua require('surround').surround_add(true)<cr>", "Add" },
-	--   d = { "<cmd>lua require('surround').surround_delete()<cr>", "Delete" },
-	--   r = { "<cmd>lua require('surround').surround_replace()<cr>", "Replace" },
-	--   q = { "<cmd>lua require('surround').toggle_quotes()<cr>", "Quotes" },
-	--   b = { "<cmd>lua require('surround').toggle_brackets()<cr>", "Brackets" },
-	-- },
 
 	t = {
 		name = "Terminal",
@@ -294,7 +254,7 @@ local mappings = {
 		p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
 		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+		v = { "<cmd>ToggleTerm size=40 direction=vertical<cr>", "Vertical" },
 	},
 
 	T = {

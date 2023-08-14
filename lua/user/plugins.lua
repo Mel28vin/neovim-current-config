@@ -24,7 +24,7 @@ require("lazy").setup({
 	"windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
 	{ "numToStr/Comment.nvim", commit = "006724e38c244c3128b2840ea40bd61dd6c419f0" },
 	"nvim-tree/nvim-web-devicons",
-	"kyazdani42/nvim-tree.lua",
+	"nvim-tree/nvim-tree.lua",
 	"akinsho/bufferline.nvim",
 	{ "moll/vim-bbye", cmd = { "Bdelete", "Bwipeout" } },
 	"nvim-lualine/lualine.nvim",
