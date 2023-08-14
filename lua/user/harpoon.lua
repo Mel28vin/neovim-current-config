@@ -1,10 +1,14 @@
-local status_ok, telescope = pcall(require, "telescope")
-if not status_ok then
-	return
-end
+local ui = require("harpoon.ui")
 
-local h_status_ok, harpoon = pcall(require, "harpoon")
-if not h_status_ok then
-	return
-end
-telescope.load_extension("harpoon")
+vim.keymap.set("n", "<A-j>", function()
+	ui.nav_file(1)
+end)
+vim.keymap.set("n", "<A-k>", function()
+	ui.nav_file(2)
+end)
+vim.keymap.set("n", "<A-l>", function()
+	ui.nav_file(3)
+end)
+vim.keymap.set("n", "<A-;>", function()
+	ui.nav_file(4)
+end)

@@ -39,6 +39,7 @@ local options = {
 	sidescrolloff = 8,
 	guicursor = "",
 	undodir = "/home/kryonickat/.cache/nvim/undodir",
+	autowrite = true,
 }
 
 vim.g.loaded_netrw = 1
