@@ -27,7 +27,7 @@ require("lazy").setup({
 	"nvim-tree/nvim-tree.lua",
 	"akinsho/bufferline.nvim",
 	{ "moll/vim-bbye", cmd = { "Bdelete", "Bwipeout" } },
-	"nvim-lualine/lualine.nvim",
+	{ "nvim-lualine/lualine.nvim", event = "VeryLazy" },
 	"akinsho/toggleterm.nvim",
 	"ahmedkhalf/project.nvim",
 	{
@@ -35,7 +35,7 @@ require("lazy").setup({
 		event = { "BufReadPost", "BufNewFile" },
 	},
 	"goolord/alpha-nvim",
-	"ThePrimeagen/harpoon",
+	{ "ThePrimeagen/harpoon", event = "VeryLazy" },
 	-- { "norcalli/nvim-colorizer.lua", ft = { "css" } },
 	{
 		"mbbill/undotree",
@@ -45,6 +45,7 @@ require("lazy").setup({
 	-- use("lunarvim/colorschemes") -- A bunch of colorschemes you can try out
 	-- "rafi/awesome-vim-colorschemes",
 	{ "catppuccin/nvim", name = "catppuccin" },
+	{ "lunarvim/Onedarker.nvim" },
 
 	-- LSP
 	{
@@ -66,7 +67,7 @@ require("lazy").setup({
 		"RRethy/vim-illuminate",
 		event = { "BufReadPost", "BufNewFile" },
 	},
-	"folke/which-key.nvim",
+	{ "folke/which-key.nvim", event = "VeryLazy" },
 
 	--  CMP
 	{
@@ -96,7 +97,8 @@ require("lazy").setup({
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		event = { "BufReadPost", "BufNewFile" },
+		cmd = { "TSInstall", "TSUpdate", "TSUpdateSync" },
+		event = { "BufRead", "BufNewFile" },
 	},
 
 	"JoosepAlviste/nvim-ts-context-commentstring",
@@ -139,7 +141,7 @@ require("lazy").setup({
 		end,
 	},
 
-	"karb94/neoscroll.nvim",
+	{ "karb94/neoscroll.nvim", event = { "BufRead", "BufNewFile" } },
 }, {
 	defaults = { lazy = true },
 	install = { colorscheme = { "catppuccin" } },
