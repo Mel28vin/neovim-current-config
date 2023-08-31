@@ -1,7 +1,6 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "006724e38c244c3128b2840ea40bd61dd6c419f0" },
   "LuaSnip": { "branch": "master", "commit": "409535b8fc54c650eb845b0c35e0cc7f08810284" },
-  "Onedarker.nvim": { "branch": "master", "commit": "b4f92f073ed7cdf0358ad005cee0484411232b1b" },
   "alpha-nvim": { "branch": "main", "commit": "8e05626e073a5a60ffeb8139076520c1eda41d59" },
   "bufferline.nvim": { "branch": "main", "commit": "417b303328118b6d836ae330142e88771c48a8a3" },
   "catppuccin": { "branch": "main", "commit": "490078b1593c6609e6a50ad5001e7902ea601824" },
@@ -42,6 +41,7 @@
   "telescope-dap.nvim": { "branch": "master", "commit": "313d2ea12ae59a1ca51b62bf01fc941a983d9c9c" },
   "telescope.nvim": { "branch": "master", "commit": "2d92125620417fbea82ec30303823e3cd69e90e8" },
   "toggleterm.nvim": { "branch": "main", "commit": "12cba0a1967b4f3f31903484dec72a6100dcf515" },
+  "tokyonight.nvim": { "branch": "main", "commit": "9a01eada39558dc3243278e6805d90e8dff45dc0" },
   "undotree": { "branch": "master", "commit": "0e11ba7325efbbb3f3bebe06213afa3e7ec75131" },
   "vim-bbye": { "branch": "master", "commit": "25ef93ac5a87526111f43e5110675032dbcacf56" },
   "vim-illuminate": { "branch": "master", "commit": "5ed17582a8e97bf0a0c617c3cf762e98f87b9859" },

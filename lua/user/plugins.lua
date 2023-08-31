@@ -45,7 +45,12 @@ require("lazy").setup({
 	-- use("lunarvim/colorschemes") -- A bunch of colorschemes you can try out
 	-- "rafi/awesome-vim-colorschemes",
 	{ "catppuccin/nvim", name = "catppuccin" },
-	{ "lunarvim/Onedarker.nvim" },
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
 
 	-- LSP
 	{
